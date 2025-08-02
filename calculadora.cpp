@@ -1,4 +1,4 @@
-// calculadora.cpp (Versión con función logaritmoNatural)
+// calculadora.cpp (Versión con función de potencia)
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -23,31 +23,16 @@ double dividir(double a, double b) {
     return a / b;
 }
 
-double raizCuadrada(double a) {
-    if (a < 0) {
-        cout << "Error: Raíz cuadrada de número negativo no permitida." << endl;
-        return 0;
-    }
-    return sqrt(a);
-}
-
-double logaritmoNatural(double a) {
-    if (a <= 0) {
-        cout << "Error: Logaritmo natural de número no positivo no permitido." << endl;
-        return 0;
-    }
-    return log(a);
+double potencia(double base, double exponente) {
+    return pow(base, exponente);
 }
 
 int main() {
     double num1, num2;
     char operacion;
-    cout << "Ingrese un número (para raíz cuadrada o logaritmo natural) o dos números (para otras operaciones): ";
-    cin >> num1;
-    if (cin.peek() != '\n') {
-        cin >> num2;
-    }
-    cout << "Ingrese operación (+, -, *, /, r, l): ";
+    cout << "Ingrese dos números: ";
+    cin >> num1 >> num2;
+    cout << "Ingrese operación (+, -, *, /, ^): ";
     cin >> operacion;
 
     switch (operacion) {
@@ -63,11 +48,8 @@ int main() {
         case '/':
             cout << "Resultado: " << dividir(num1, num2) << endl;
             break;
-        case 'r':
-            cout << "Resultado: " << raizCuadrada(num1) << endl;
-            break;
-        case 'l':
-            cout << "Resultado: " << logaritmoNatural(num1) << endl;
+        case '^':
+            cout << "Resultado: " << potencia(num1, num2) << endl;
             break;
         default:
             cout << "Operación no válida." << endl;
