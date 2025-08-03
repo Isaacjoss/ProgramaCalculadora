@@ -39,15 +39,25 @@ double logaritmoNatural(double a) {
     return log(a);
 }
 
+double raizCuadrada(double a) {
+    if (a < 0) {
+        cout << "Error: Ra�z cuadrada de n�mero negativo no permitida." << endl;
+        return 0;
+    }
+    return sqrt(a);
+}
+
 int main() {
     double num1, num2;
     char operacion;
+
     cout << "Ingrese un número (para raíz cuadrada o logaritmo natural) o dos números (para otras operaciones): ";
     cin >> num1;
     if (cin.peek() != '\n') {
         cin >> num2;
     }
     cout << "Ingrese operación (+, -, *, /, r, l): ";
+
     cin >> operacion;
 
     switch (operacion) {
@@ -69,6 +79,7 @@ int main() {
         case 'l':
             cout << "Resultado: " << logaritmoNatural(num1) << endl;
             break;
+
         default:
             cout << "Operación no válida." << endl;
     }
