@@ -45,14 +45,14 @@ double logaritmoNatural(double a) {
         return 0;
     }
     return log(a);
-}
-
+  
 double modulo(double a, double b) {
     if (b == 0) {
         cout << "Error: Módulo por cero no permitido." << endl;
         return 0;
     }
     return fmod(a, b);
+
 }
 
 int main() {
@@ -63,7 +63,9 @@ int main() {
     if (cin.peek() != '\n') {
         cin >> num2;
     }
+  
     cout << "Ingrese operación (+, -, *, /, r, l, n, %): ";
+
     cin >> operacion;
 
     switch (operacion) {
