@@ -23,6 +23,10 @@ double dividir(double a, double b) {
     return a / b;
 }
 
+double potencia(double base, double exponente) {
+    return pow(base, exponente);
+}
+
 double raizCuadrada(double a) {
     if (a < 0) {
         cout << "Error: Raíz cuadrada de número negativo no permitida." << endl;
@@ -64,7 +68,7 @@ int main() {
         cin >> num2;
     }
   
-    cout << "Ingrese operación (+, -, *, /, r, l, n, %): ";
+    cout << "Ingrese operación (+, -, *, /, ^, r, l, n, %): ";
 
     cin >> operacion;
 
@@ -80,6 +84,9 @@ int main() {
             break;
         case '/':
             cout << "Resultado: " << dividir(num1, num2) << endl;
+            break;
+        case '^':
+            cout << "Resultado: " << potencia(num1, num2) << endl;
             break;
         case 'r':
             cout << "Resultado: " << raizCuadrada(num1) << endl;
